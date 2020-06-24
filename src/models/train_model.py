@@ -2,7 +2,6 @@
 import torchvision
 import torch
 import torch.nn as nn
-from .model import get_emotions_model
 from torch.utils.data import DataLoader, TensorDataset
 
 # Import catalyst
@@ -19,6 +18,7 @@ import pandas as pd
 # My
 from .auc import AUCCallback
 from .transform import get_X_scaled
+from .model import get_emotions_model
 from ..dirs import DIR_DATA_PROCESSED, DIR_DATA_LOGS
 
 if __name__ == '__main__':
