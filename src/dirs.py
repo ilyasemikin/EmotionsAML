@@ -7,7 +7,7 @@ DIR_DATA_LOGS.mkdir(parents=True, exist_ok=True)
 DIR_DATA_RAW = DIR_DATA / 'raw'
 DIR_DATA_RAW.mkdir(parents=True, exist_ok=True)
 
-DIR_DATA_INTERHIM = DIR_DATA / 'interim'
+DIR_DATA_INTERHIM = DIR_DATA / 'interhim'
 DIR_DATA_INTERHIM.mkdir(parents=True, exist_ok=True)
 
 DIR_DATA_PROCESSED = DIR_DATA / 'processed'
@@ -21,11 +21,9 @@ DIR_DATA_NUMPY.mkdir(parents=True, exist_ok=True)
 
 def iterfiles(directory: Path, include: callable = lambda x: True):
     """An iterator that returns a list of the names of all files in the specified directory and its subdirectories.
-
     Args:
         directory: pathlib.Path directory object.
         include: (optional) Lambda function for filtering files (takes a file name, returns True to take a file, False otherwise).
-
     Returns:
         Generator listing file names (pathlib.Path objects).
     """
