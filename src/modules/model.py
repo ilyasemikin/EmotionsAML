@@ -17,8 +17,8 @@ class MLP(nn.Module):
             nn.Linear(120, num_class)
         )
 
-    def init_weights(self, f_path):
-        checkpoint = torch.load(f_path)
+    def init_weights(self, f_path, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')):
+        checkpoint = torch.load(f_path, map_location=device)
         self.load_state_dict(checkpoint['model_state_dict'])
 
     def forward(self, x):
